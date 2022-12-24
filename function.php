@@ -12,3 +12,13 @@ function get_quantity_task($project, array $tasks)
     }
     return $quantity;
 }
+
+function alarm_task_propity($deadline)
+{
+    // Метка времени на сейчас:
+    $origin = time();
+    $target = strtotime($deadline);
+    $time_left = $target - $origin;
+    $time_left = floor($time_left / 3600);
+    return  $time_left;
+};
